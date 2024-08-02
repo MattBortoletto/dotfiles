@@ -1,8 +1,13 @@
+#export VIM_HOME=/usr/local/Cellar/vim/8.2.2100/
+#export PATH=$PATH:$VIM_HOME/bin
+#alias vi=nvim
+#alias vim=nvim
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme
-#ZSH_THEME="robbyrussell" #"frisk" #"robbyrussell" # aussiegeek, jtriley, jispwoso
+#ZSH_THEME="frisk" #"robbyrussell" # aussiegeek, jtriley, jispwoso
 
 # Which plugins would you like to load?
 plugins=(
@@ -39,7 +44,7 @@ function precmd {
   if [ $branch ]; then
     branch=$branch" "
   fi
-  PROMPT=" ${COLOUR}mattb%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%} %{$fg[cyan]%}$branch%{$reset_color%}"
+  PROMPT=" ${COLOUR}mattb%{$reset_color%} %{$fg[yellow]%}>%{$reset_color%} %{$fg[cyan]%}$branch%{$reset_color%}"
 }
 precmd
 
