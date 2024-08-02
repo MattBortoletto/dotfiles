@@ -44,7 +44,7 @@ function precmd {
   if [ $branch ]; then
     branch=$branch" "
   fi
-  PROMPT=" ${COLOUR}mattb%{$reset_color%} %{$fg[yellow]%}>%{$reset_color%} %{$fg[cyan]%}$branch%{$reset_color%}"
+  PROMPT=" ${COLOUR}mattb%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%} %{$fg[cyan]%}$branch%{$reset_color%}"
 }
 precmd
 
