@@ -36,7 +36,7 @@ alias config='/usr/bin/git --git-dir=/Users/mattb/.cfg/ --work-tree=/Users/mattb
 function git_branch_name() {
     branch=$(git symbolic-ref --short HEAD 2> /dev/null)
     if [[ -n $branch ]]; then
-        echo "($branch)"
+        echo " ($branch)"
     fi
 }
 setopt prompt_subst
