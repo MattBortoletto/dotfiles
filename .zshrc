@@ -40,7 +40,7 @@ function git_branch_name() {
     fi
 }
 setopt prompt_subst
-prompt='%{$(tput setaf 37)%}%n@%m %{$(tput setaf 168)%}%1~%{$(tput sgr0)%} $(git_branch_name) '
+prompt='%{$(tput setaf 37)%}%n@%m %{$(tput setaf 168)%}%1~%{$(tput sgr0)%}$(git_branch_name) '
 
 # ==============================================================================
 # Conda
