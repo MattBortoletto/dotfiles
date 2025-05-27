@@ -36,11 +36,13 @@ alias config='/usr/bin/git --git-dir=/Users/mattb/.cfg/ --work-tree=/Users/mattb
 function git_branch_name() {
     branch=$(git symbolic-ref --short HEAD 2> /dev/null)
     if [[ -n $branch ]]; then
-        echo " ($branch)"
+        echo "%{$(tput setaf 142)%} ($branch)%{$(tput sgr0)%}"
+    else 
+        echo ""
     fi
 }
 setopt prompt_subst
-prompt='%{$(tput setaf 37)%}%n@%m %{$(tput setaf 168)%}%1~%{$(tput sgr0)%}$(git_branch_name) '
+prompt='%{$(tput setaf 37)%}%n@%m %{$(tput setaf 168)%}%~%{$(tput sgr0)%}$(git_branch_name) '
 
 # ==============================================================================
 # Conda
