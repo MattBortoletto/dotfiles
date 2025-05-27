@@ -1,25 +1,19 @@
-#export VIM_HOME=/usr/local/Cellar/vim/8.2.2100/
-#export PATH=$PATH:$VIM_HOME/bin
-#alias vi=nvim
-#alias vim=nvim
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Theme
-#ZSH_THEME="frisk" #"robbyrussell" # aussiegeek, jtriley, jispwoso
-
-# Which plugins would you like to load?
+# ==============================================================================
+# Plugins
+# ==============================================================================
 plugins=(
   git
   zsh-autosuggestions
 )
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 source $ZSH/oh-my-zsh.sh
-
+export EDITOR='vim'
 export LANG=en_US.UTF-8
+export CLIENT_SECRETS_PATH="/Users/mattb/client_secrets.json"
 
 # ==============================================================================
 # Aliases
@@ -28,6 +22,7 @@ alias howmany='ls | wc -l'
 alias sshgpu1='ssh bortoletto@gpu1.hcics.simtech.uni-stuttgart.de'
 alias sshgpu2='ssh bortoletto@gpu2.hcics.simtech.uni-stuttgart.de'
 alias sshgpu3='ssh bortoletto@gpu3.hcics.simtech.uni-stuttgart.de'
+alias sshgpu4='ssh bortoletto@gpu4.hcics.simtech.uni-stuttgart.de'
 sshjn() {
   ssh -N -L localhost:"$1":localhost:"$1" bortoletto@"$2".hcics.simtech.uni-stuttgart.de
 }
@@ -37,27 +32,15 @@ alias config='/usr/bin/git --git-dir=/Users/mattb/.cfg/ --work-tree=/Users/mattb
 # ==============================================================================
 # Prompt
 # ==============================================================================
-COLOUR="%{$fg[cyan]%}"
 
-function precmd {
-  branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-  if [ $branch ]; then
-    branch=$branch" "
-  fi
-  PROMPT=" ${COLOUR}mattb%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%} %{$fg[cyan]%}$branch%{$reset_color%}"
+function git_branch_name() {
+    branch=$(git symbolic-ref --short HEAD 2> /dev/null)
+    if [[ -n $branch ]]; then
+        echo "($branch)"
+    fi
 }
-precmd
-
-function zle-line-init zle-keymap-select {
-  case ${KEYMAP} in
-    (vicmd)      COLOUR="%{$fg[white]%}" ;;
-    (*)          COLOUR="%{$fg[cyan]%}" ;;
-  esac
-  precmd
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+setopt prompt_subst
+prompt='%{$(tput setaf 37)%}%n@%m %{$(tput setaf 168)%}%1~%{$(tput sgr0)%} $(git_branch_name) '
 
 # ==============================================================================
 # Conda
@@ -78,3 +61,17 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# ==============================================================================
+# Julia
+# ==============================================================================
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/mattb/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
+
+# Added by Windsurf
+export PATH="/Users/mattb/.codeium/windsurf/bin:$PATH"
