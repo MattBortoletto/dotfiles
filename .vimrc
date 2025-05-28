@@ -15,8 +15,6 @@ filetype off
 filetype plugin indent on
 syntax on
 
-colorscheme catppuccin_mocha
-set termguicolors
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -33,5 +31,4 @@ set wildmenu
 set smartcase
 set ignorecase smartcase 
 set path+=**
-
-hi Normal guibg=NONE ctermbg=NONE
+hi LineNr cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
