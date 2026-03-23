@@ -10,7 +10,6 @@ export EDITOR=vim
 # ==============================================================================
 # Colors
 # ==============================================================================
-
 if command -v gdircolors &> /dev/null; then
     eval "$(gdircolors -b)"
     alias ls='gls --color=auto'
@@ -28,7 +27,6 @@ alias egrep='egrep --color=auto'
 # ==============================================================================
 # Prompt
 # ==============================================================================
-
 function git_branch_name() {
     branch=$(git symbolic-ref --short HEAD 2> /dev/null)
     if [[ -n $branch ]]; then
