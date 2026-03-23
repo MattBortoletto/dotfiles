@@ -32,3 +32,7 @@ set smartcase
 set ignorecase smartcase 
 set path+=**
 hi LineNr cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" file explorer
+inoremap <c-q> <Esc>:Lex<cr>:vertical resize 30<cr>
+nnoremap <c-q> <Esc>:Lex<cr>:vertical resize 30<cr>
