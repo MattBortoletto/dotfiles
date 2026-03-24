@@ -38,5 +38,3 @@ function git_branch_name() {
 setopt prompt_subst
 #prompt='%{$(tput setaf 37)%}%n@%m %{$(tput setaf 168)%}%~%{$(tput sgr0)%}$(git_branch_name) '
 prompt='%n@%m%f %F{168}%~%f$(git_branch_name) '
-
-alias ll='ls -laF'
