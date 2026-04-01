@@ -9,7 +9,6 @@ if command -v gdircolors &> /dev/null; then
     alias ls='gls --color=auto'
     alias ll='gls -la --color=auto'
 else
-    # Fallback for if coreutils isn't installed
     export CLICOLOR=1
     alias ll='ls -la'
 fi
