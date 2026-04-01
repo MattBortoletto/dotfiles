@@ -1,15 +1,9 @@
 bindkey "^[[1;3C" forward-word   # Option+Right
 bindkey "^[[1;3D" backward-word  # Option+Left
 
-# ==============================================================================
-# Vim mode
-# ==============================================================================
 bindkey -v
 export EDITOR=vim
 
-# ==============================================================================
-# Colors
-# ==============================================================================
 if command -v gdircolors &> /dev/null; then
     eval "$(gdircolors -b)"
     alias ls='gls --color=auto'
@@ -24,9 +18,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# ==============================================================================
-# Prompt
-# ==============================================================================
 function git_branch_name() {
     branch=$(git symbolic-ref --short HEAD 2> /dev/null)
     if [[ -n $branch ]]; then
