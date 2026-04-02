@@ -23,14 +23,14 @@ Add to orgs, and switch notifications to work email.
 
 ## Misc
 
-Setup fzf:
+- Setup fzf:
 
-```
-$(brew --prefix)/opt/fzf/install
-```
+  ```
+  $(brew --prefix)/opt/fzf/install
+  ```
 
-Hold keys to have them repeat in VSCode: 
+- Hold keys to have them repeat in VSCode: 
 
-```
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-```
+  ```
+  defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+  ```
