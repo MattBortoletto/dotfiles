@@ -7,8 +7,9 @@ brew install tmux
 brew install wget
 brew install fzf
 brew install --cask rectangle
-brew install --cask wezterm
 brew install --cask visual-studio-code
+brew install --cask kitty
+brew install --cask wezterm
 ```
 
 ## GitHub
