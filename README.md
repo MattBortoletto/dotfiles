@@ -23,6 +23,12 @@ Add to orgs, and switch notifications to work email.
 
 ## Other
 
+Setup fzf:
+
+```
+$(brew --prefix)/opt/fzf/install
+```
+
 Hold keys to have them repeat in VSCode: 
 
 ```
