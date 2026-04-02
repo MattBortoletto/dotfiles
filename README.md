@@ -21,7 +21,7 @@ ssh-keygen -t rsa -b 4096 -C "email"
 
 Add to orgs, and switch notifications to work email.
 
-## Other
+## Misc
 
 Setup fzf:
 
