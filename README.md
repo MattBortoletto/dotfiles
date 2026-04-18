@@ -35,3 +35,8 @@ Add to orgs, and switch notifications to work email.
   ```
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
   ```
+
+```
+microvac
+zork
+```
